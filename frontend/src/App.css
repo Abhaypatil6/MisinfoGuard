@@ -1,0 +1,322 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #38bdf8;
+  --success-color: #4ade80;
+  --error-color: #f87171;
+  --warning-color: #fbbf24;
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(to right, var(--accent-color), #818cf8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+/* Glassmorphism Card */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Section */
+.search-box {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+input {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--glass-border);
+  background: var(--card-bg);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--accent-color);
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: linear-gradient(to right, var(--accent-color), #3b82f6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Claim Status */
+.status-banner {
+  display: block;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.status-verified-fact {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(34, 197, 94, 0.3));
+  color: var(--success-color);
+  border: 2px solid var(--success-color);
+}
+
+.status-misinformation {
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.3), rgba(239, 68, 68, 0.3));
+  color: var(--error-color);
+  border: 2px solid var(--error-color);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-misleading {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.3));
+  color: var(--warning-color);
+  border: 2px solid var(--warning-color);
+}
+
+.status-unverified {
+  background: rgba(148, 163, 184, 0.2);
+  color: var(--text-secondary);
+  border: 2px solid var(--text-secondary);
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.explanation {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Evidence Section */
+.evidence-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.evidence-section h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.evidence-list {
+  list-style: none;
+  padding: 0;
+}
+
+.evidence-list li {
+  margin-bottom: 0.5rem;
+}
+
+.evidence-list a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.evidence-list a:hover {
+  text-decoration: underline;
+}
+
+/* Loading Indicator */
+.loading-indicator {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.loading-indicator p {
+  margin: 0;
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Error Message */
+.error-message {
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.2), rgba(239, 68, 68, 0.2));
+  border: 1px solid var(--error-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--error-color);
+  text-align: center;
+}
+
+.error-message p {
+  margin: 0;
+}
+
+/* Claims Grid */
+.claims-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Metadata Card */
+.metadata-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.cache-badge {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.timing {
+  color: var(--text-secondary);
+}
+
+.trace-id {
+  color: var(--accent-color);
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+/* Confidence Bar */
+.confidence-bar {
+  margin: 1rem 0;
+}
+
+.confidence-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.confidence-indicator {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-color), #22c55e);
+  transition: width 0.5s ease;
+}
+
+/* Evidence Snippet */
+.evidence-snippet {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
+}
+
+/* Cache Indicator */
+.cache-indicator {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid var(--success-color);
+  border-radius: 0.5rem;
+  color: var(-- success-color);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Error Card */
+.error-card {
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.1), rgba(239, 68, 68, 0.1));
+  border-color: var(--error-color);
+  color: var(--error-color);
+}

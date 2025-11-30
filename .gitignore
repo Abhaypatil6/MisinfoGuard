@@ -1,0 +1,7 @@
+__pycache__/
+venv/
+.env
+.idea/
+memory_bank.db
+*.pyc
+.DS_Store
