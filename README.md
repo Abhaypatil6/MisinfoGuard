@@ -46,7 +46,7 @@ echo "GOOGLE_API_KEY=your_api_key_here" > .env
 uvicorn api:app --reload
 ```
 
-
+The backend API server will start on port 8000.
 
 ### Frontend Setup
 
@@ -56,7 +56,7 @@ npm install
 npm run dev
 ```
 
-
+The frontend application will start on port 5173.
 
 ## 📡 API Endpoints
 
@@ -113,8 +113,8 @@ Capstone/
 
 1. **Fresh Analysis**: Search for "Climate Change"
 2. **Cache Test**: Search same topic again (< 100ms)
-3. **Metrics**: Visit http://localhost:8000/metrics
-4. **Memory Stats**: Visit http://localhost:8000/memory/stats
+3. **Metrics**: Navigate to the `/metrics` endpoint on the backend server.
+4. **Memory Stats**: Navigate to the `/memory/stats` endpoint on the backend server.
 
 ## 📊 Performance
 
