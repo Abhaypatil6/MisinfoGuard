@@ -46,7 +46,7 @@ echo "GOOGLE_API_KEY=your_api_key_here" > .env
 uvicorn api:app --reload
 ```
 
-Backend runs at http://localhost:8000
+
 
 ### Frontend Setup
 
